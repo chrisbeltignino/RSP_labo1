@@ -138,7 +138,13 @@ int controller_mapeo(LinkedList* pArrayListPokemons)
 
     return retorno;
 }
-
+/**
+ * @fn int controller_mapeoEventoKanto(LinkedList*)
+ * @brief Mapear valor de ataque en pokemones
+ *
+ * @param pArrayListPokemons
+ * @return int
+ */
 int controller_mapeoEventoKanto(LinkedList* pArrayListPokemons)
 {
     LinkedList* listaAux = ll_newLinkedList();
@@ -153,7 +159,13 @@ int controller_mapeoEventoKanto(LinkedList* pArrayListPokemons)
 
     return retorno;
 }
-
+/**
+ * @fn int controller_batallaPokemon(LinkedList*)
+ * @brief Determinar cuántos pokemones cumplen con dichas características y anunciar si ganamos la batalla o no.
+ *
+ * @param pArrayListPokemons
+ * @return int retorno
+ */
 int controller_batallaPokemon(LinkedList* pArrayListPokemons)
 {
     int retorno;
