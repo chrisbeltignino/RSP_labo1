@@ -13,8 +13,10 @@ int Menu()
 				"2. Baja de Pokemones\n"
 				"3. Listar Pokemones\n"
 				"4. Filtrar de tipo Agua variocolor\n"
-				"5. Mapear ataque cargado\n"
-				"6. Salir\n"
+				"5. Mapear con dia despejado\n"
+				"6. Mapear evento Kanto\n"
+				"7. Batalla Pokemon\n"
+				"8. Salir\n"
 				"--------------------------------------------------------------------------------\n"
 				"Ingrese una opcion: ",
 				"--------------------------------------------------------------------------------\n"
@@ -22,10 +24,12 @@ int Menu()
 				"2. Baja de Pokemones\n"
 				"3. Listar Pokemones\n"
 				"4. Filtrar de tipo Agua variocolor\n"
-				"5. Mapear ataque cargado\n"
-				"6. Salir\n"
+				"5. Mapear con dia despejado\n"
+				"6. Mapear evento Kanto\n"
+				"7. Batalla Pokemon\n"
+				"8. Salir\n"
 				"--------------------------------------------------------------------------------\n"
-				"Error, opcion invalida: ",1,6);
+				"Error, opcion invalida: ",1,8);
 
 	return opciones;
 }

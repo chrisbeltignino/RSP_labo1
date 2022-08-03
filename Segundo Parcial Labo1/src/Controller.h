@@ -4,4 +4,6 @@ int controller_ListPokemons(LinkedList* pArrayListPokemons);
 int controller_saveAsText(char* path , LinkedList* pArrayListPassenger);
 int controller_filterAgua(LinkedList* pArrayListPokemons);
 int controller_mapeo(LinkedList* pArrayListPokemons);
+int controller_mapeoEventoKanto(LinkedList* pArrayListPokemons);
+int controller_batallaPokemon(LinkedList* pArrayListPokemons);
 

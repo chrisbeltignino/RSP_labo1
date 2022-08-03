@@ -467,3 +467,78 @@ void* Pokemons_mapeoPokemones(void* Pokemon)
 	}
 	return pElement;
 }
+
+/*
+ *6) Mapear ataque cargado: Con motivo del evento Kanto, los pokemenos que
+cumplan con las siguientes características incrementaron su poder:
+Los pokemones de tipo Bug, Fire y Grass aumentarán su poder un 20%
+siempre y cuando el tamaño sea XL, un 10% si es L y sino un 5 para cualquier otro
+tamaño.
+ **/
+void* Pokemons_mapeoPokemonesEventoKanto(void* Pokemon)
+{
+	Pokemons* pElement = NULL;
+	int auxAtaqueCargado;
+	char auxTipo[50];
+	char auxTamanio[50];
+	int bufeo;
+
+	if(Pokemon != NULL)
+	{
+		pElement = (Pokemons*) Pokemon;
+
+		Pokemons_getValorAtaque(pElement, &auxAtaqueCargado);
+		Pokemons_getTipo(pElement, auxTipo);
+		Pokemons_getTamanio(pElement, auxTamanio);
+
+		if(((strcmp(auxTipo, "Bug") == 0) || (strcmp(auxTipo, "Grass") == 0) || (strcmp(auxTipo, "Fire") == 0)) && (strcmp(auxTamanio, "XL") == 0))
+		{
+			bufeo = auxAtaqueCargado * 0.20;
+			auxAtaqueCargado = auxAtaqueCargado + bufeo;
+			Pokemons_setValorAtaque(Pokemon, auxAtaqueCargado);
+
+			if((strcmp(auxTamanio, "L") == 0))
+			{
+				bufeo = auxAtaqueCargado * 0.10;
+				auxAtaqueCargado = auxAtaqueCargado + bufeo;
+				Pokemons_setValorAtaque(Pokemon, auxAtaqueCargado);
+			}else{
+				bufeo = auxAtaqueCargado * 0.5;
+				auxAtaqueCargado = auxAtaqueCargado + bufeo;
+				Pokemons_setValorAtaque(Pokemon, auxAtaqueCargado);
+			}
+		}
+	}
+	return pElement;
+}
+
+int Pokemons_Batalla(void* Pokemon)
+{
+	int retorno = -1;
+
+	Pokemons* pElement = NULL;
+	int auxValorCargado;
+	char auxAtaqueCargado[50];
+	char auxTipo[50];
+	char auxTamanio[50];
+
+	if(Pokemon != NULL)
+	{
+		pElement = (Pokemons*) Pokemon;
+
+		Pokemons_getValorAtaque(pElement, &auxValorCargado);
+		Pokemons_getAtaqueCargado(pElement, auxAtaqueCargado);
+		Pokemons_getTipo(pElement, auxTipo);
+		Pokemons_getTamanio(pElement, auxTamanio);
+
+		if(((strcmp(auxTipo, "Fire") == 0) && (strcmp(auxAtaqueCargado, "Lanzallamas") == 0) && (strcmp(auxTamanio, "XL") == 0) && auxValorCargado > 80)
+		|| ((strcmp(auxTipo, "Water") == 0) && (strcmp(auxAtaqueCargado, "Hidrobomba") == 0) && (strcmp(auxTamanio, "L") == 0) && auxValorCargado > 80))
+		{
+			retorno = 1;
+		}else{
+			retorno = 0;
+		}
+
+	}
+	return retorno;
+}

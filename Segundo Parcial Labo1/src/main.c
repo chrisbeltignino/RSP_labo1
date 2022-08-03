@@ -73,7 +73,7 @@ int main(void)
 					controller_filterAgua(listaPokemones);
 				}else
 				{
-					printf("No hay pasajeros para mostrar");
+					printf("No hay pokemones para filtrar");
 				}
 				system("pause");
 			break;
@@ -83,7 +83,27 @@ int main(void)
 					controller_mapeo(listaPokemones);
 				}else
 				{
-					printf("No hay pasajeros para mostrar");
+					printf("No hay pokemones para mapear");
+				}
+				system("pause");
+			break;
+			case 6:
+				if(!ll_isEmpty(listaPokemones))
+				{
+					controller_mapeoEventoKanto(listaPokemones);
+				}else
+				{
+					printf("No hay pokemones para mapear");
+				}
+				system("pause");
+			break;
+			case 7:
+				if(!ll_isEmpty(listaPokemones))
+				{
+					controller_batallaPokemon(listaPokemones);
+				}else
+				{
+					printf("No hay pokemones para batallar");
 				}
 				system("pause");
 			break;

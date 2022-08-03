@@ -31,6 +31,8 @@ int Pokemons_printList(LinkedList* listaPokemons);
 void Pokemons_delete(Pokemons* this);
 int Pokemons_filterAgua(void* Pokemon);
 void* Pokemons_mapeoPokemones(void* Pokemon);
+void* Pokemons_mapeoPokemonesEventoKanto(void* Pokemon);
+int Pokemons_Batalla(void* Pokemon);
 
 int Pokemons_getNumero(Pokemons* this,int* numero);
 int Pokemons_getNombre(Pokemons* this, char* nombre);

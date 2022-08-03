@@ -654,3 +654,23 @@ LinkedList* ll_map(LinkedList* this, void* (pFunc)(void*))
 
     return listaMapeada;
 }
+
+int ll_count(LinkedList* this, int (*pFunc)(void*))
+{
+	int cont = 0;
+	int len;
+
+	if(this!=NULL && pFunc!=NULL)
+	{
+		len = ll_len(this);
+
+		for(int i=0; i<len; i++)
+		{
+			if(pFunc(ll_get(this, i)) == 1)
+			{
+				cont++;
+			}
+		}
+	}
+	return cont;
+}

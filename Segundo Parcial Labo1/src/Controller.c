@@ -130,9 +130,46 @@ int controller_mapeo(LinkedList* pArrayListPokemons)
     if(pArrayListPokemons != NULL)
     {
     	printf("MAPEO DE POKEMONES\n");
-    	listaAux = ll_map(pArrayListPokemons, Pokemons_mapeoPokemones);
-    	controller_ListPokemons(listaAux);
-    	retorno = 0;
+
+		listaAux = ll_map(pArrayListPokemons, Pokemons_mapeoPokemones);
+		controller_ListPokemons(listaAux);
+		retorno = 0;
+    }
+
+    return retorno;
+}
+
+int controller_mapeoEventoKanto(LinkedList* pArrayListPokemons)
+{
+    LinkedList* listaAux = ll_newLinkedList();
+    int retorno = -1;
+
+    if(pArrayListPokemons != NULL)
+    {
+    	listaAux = ll_map(pArrayListPokemons, Pokemons_mapeoPokemonesEventoKanto);
+		controller_ListPokemons(listaAux);
+		retorno = 0;
+    }
+
+    return retorno;
+}
+
+int controller_batallaPokemon(LinkedList* pArrayListPokemons)
+{
+    int retorno;
+
+    if(pArrayListPokemons != NULL)
+    {
+    	retorno = ll_count(pArrayListPokemons, Pokemons_Batalla);
+
+    	printf("La cantidad de Pokemones que cumplen para batallar a Lugia, son: %d\n", retorno);
+
+		if(retorno > 2)
+		{
+			printf("Muy bien!!!! Has ganado la batalla\n");
+		}else{
+			printf("Has perdido la batalla, la proxima sera mi rey\n");
+		}
     }
 
     return retorno;
