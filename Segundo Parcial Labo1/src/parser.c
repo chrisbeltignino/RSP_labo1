@@ -27,7 +27,6 @@ int parser_PokemonsFromText(FILE* pFile , LinkedList* pArrayListPokemons)
 
 	if(pFile!=NULL && pArrayListPokemons!=NULL)
 	{
-		//fscanf(pFile,"%[^,] , %[^,] , %[^,] , %[^,] , %[^,] , %[^,] , %[^\n]\n",numero,nombre,tipo,tamanio,ataqueCargado,valorAtaque,esVariocolor);
 		do
 		{
 			cantidad = fscanf(pFile,"%[^,] , %[^,] , %[^,] , %[^,] , %[^,] , %[^,] , %[^\n]\n",numero,nombre,tipo,tamanio,ataqueCargado,valorAtaque,esVariocolor);

@@ -35,7 +35,7 @@ int main(void)
 			case 1:
 				if(ll_isEmpty(listaPokemones) || (flagTxt==NO_REALIZADO))
 				{
-					if(!controller_loadFromText("C:\\Users\\Usuario\\Desktop\\Workspace\\Segundo Parcial Labo1\\src\\Data_Pokemones.csv", listaPokemones))
+					if(!controller_loadFromText("Data_Pokemones.csv", listaPokemones))
 					{
 						flagTxt=REALIZADO;
 					}else
